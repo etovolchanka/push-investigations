@@ -75,10 +75,14 @@ class Push {
     }
 
     async subscribe() {
-        await this.messaging.requestPermission();
-        this.setClientToken(await this.messaging.getToken());
-        this.setSubscribedButtonsState();
-        alert('You have subscribed! Now try to send push notification!');
+        try {
+            await this.messaging.requestPermission();
+            this.setClientToken(await this.messaging.getToken());
+            this.setSubscribedButtonsState();
+            alert('You have subscribed! Now try to send push notification!');
+        } catch (e) {
+            this.showError(e);
+        }
     }
 
     async unsubscribe() {
