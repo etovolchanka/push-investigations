@@ -3,17 +3,14 @@ class Push {
 
         this.storageItemName = 'fcm_token';
 
-        this.messagingSenderId = '48253656107';
-
         this.permissionGranted = false;
 
         firebase.initializeApp({
-            messagingSenderId: this.messagingSenderId,
+            messagingSenderId: '48253656107',
         });
 
         this.messaging = firebase.messaging();
 
-        this.apiKeyField = document.getElementById('apiKey');
         this.subButton = document.getElementById('sub');
         this.unsubButton = document.getElementById('unsub');
         this.pushButton = document.getElementById('push');
