@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.8.2/firebase-messaging.js"></script>
+    <title>Push test</title>
+</head>
+<body>
+    <input style="display: block; width: 100%" type="text" id="apiKey" placeholder="Place Firebase API key here"/>
+    <button id="sub" disabled>Subscribe</button>
+    <button id="push" disabled>Send Push</button>
+    <button id="unsub" disabled>Unsubscribe</button>
+    <p id="succ" style="color: darkgreen"></p>
+    <p id="error" style="color: darkred"></p>
+    <script type="text/javascript" src="push.js"></script>
+</body>
+</html>
