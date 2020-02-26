@@ -3,7 +3,7 @@ class Push {
 
         this.storageItemName = 'fcm_token';
 
-        this.messagingSenderId = '635839491665';
+        this.messagingSenderId = '48253656107';
 
         this.permissionGranted = false;
 
@@ -96,7 +96,6 @@ class Push {
     }
 
     async sendTestPush() {
-        if (!this.apiKeyField.value) return;
         try {
             const result = await fetch('/send', {
                 method: 'POST',
@@ -104,7 +103,6 @@ class Push {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    apiKey: this.apiKeyField.value,
                     token: this.getClientToken(),
                 }),
             });

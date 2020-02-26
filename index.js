@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-let apiKey = '';
+let testApiKey = 'AAAACzwkXCs:APA91bEHOhZ5udHxTC9Rh-xjOjld56sin8_mNCaC_hOTqS0bIwPkN2pRStM4BDTjZgi4N6Y6773dF32SAHmRbbfRMxzn_NaHyIMfPrNXGq3sP_pWFYHD5PjHU8qq4ZKy8yjNK0KO1Qfd';
 
 const sendPush = (token) => {
     return fetch('https://fcm.googleapis.com/fcm/send', {
@@ -21,7 +21,7 @@ const sendPush = (token) => {
         }),
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `key=${apiKey}`,
+            'Authorization': `key=${testApiKey}`,
         }
     });
 };
@@ -31,7 +31,6 @@ app.get('/', (req, res) => {
 });
 
 app.post('/send', async (req, res) => {
-    apiKey = req.body.apiKey;
     try {
         const result = await sendPush(req.body.token);
         res.send(await result.json());
