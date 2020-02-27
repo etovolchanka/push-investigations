@@ -6,7 +6,10 @@ class Push {
         this.permissionGranted = false;
 
         firebase.initializeApp({
+            projectId: 'push-test-2020',
+            appId: 'push-test-2020',
             messagingSenderId: '48253656107',
+            apiKey: 'AIzaSyDE4aNtTqJHFwhXDwaUli_wigVu5AwQ1QA',
         });
 
         this.messaging = firebase.messaging();
